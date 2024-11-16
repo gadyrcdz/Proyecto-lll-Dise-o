@@ -1,0 +1,176 @@
+/*VehicleRegister*/
+
+.vehicle-register-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.vehicle-register-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000; /* Dorado */
+  font-weight: bold;
+}
+
+.vehicle-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #d32f2f;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #b71c1c;
+}
+
+
+/*BasicInformation*/
+
+.basic-information-section {
+    margin-bottom: 20px;
+  }
+  
+  .basic-information-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Gris oscuro */
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+/*SaleOptions*/
+
+.sale-options-section {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+.form-group input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+/*Photo upload*/
+.photo-upload-section {
+  margin-bottom: 20px;
+}
+
+.photo-upload-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.upload-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  border: solid 1px #000000;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.photo-preview {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.preview-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/*PhysicalFeatures*/
+.physical-features-section {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.dimensions-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.dimensions-inputs div {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="number"] {
+  width: 100px;
+}

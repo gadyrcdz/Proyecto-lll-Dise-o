@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';  // Importar Router y Routes
 import './App.css';
 import Users from './components/userRegister/users';  // Importar el componente Users (registro de usuarios)
-// import Vehicles from './components/vehicleRegister/Vehicles';  // Importar el componente de registro de vehículos (si lo tienes)
+import VehicleRegister from './components/vehicles/VehicleRegister ';
 
 function App() {
     return (
@@ -38,7 +38,7 @@ function App() {
                 <Routes>
                     <Route path="/"  />  {/* Ruta para la página principal */}
                     <Route path="/register-user" element={<Users />} />  {/* Ruta para el registro de usuarios */}
-                    {/* <Route path="/register-vehicle" element={<Vehicles />} />  Ruta para el registro de vehículos */}
+                    <Route path="/register-vehicle" element={<VehicleRegister />} /> 
                 </Routes>
             </div>
         </Router>
