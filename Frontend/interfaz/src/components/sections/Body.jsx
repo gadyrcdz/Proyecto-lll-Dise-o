@@ -7,6 +7,7 @@ const Body = () => {
         <div>
             <h1>Bienvenido al Sistema de Registro de Vehículos</h1>
             <Form />
+            
         </div>
     );
 };

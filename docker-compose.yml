@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  sql_server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: docker_sql
+    environment:
+      - SA_PASSWORD=Pa55w0rd
+      - ACCEPT_EULA=Y
+    ports:
+      - "1414:1433"
+    networks:
+      - sql_network
+    volumes:
+      - sql_data:/var/opt/mssql
+    user: "root"
+
+networks:
+  sql_network:
+    driver: bridge
+
+volumes:
+  sql_data:
