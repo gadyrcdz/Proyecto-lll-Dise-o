@@ -9,7 +9,15 @@ const Body = () => {
         <div>
             <h1>Bienvenido al Sistema de Registro de Vehículos</h1>
             <Form />
-            <CarCarousel />
+            <CarCarousel 
+                tipo_vehiculo={null}
+                modelo={null}
+                marca={null}
+                motor={null}
+                transmision={null}
+                precio={null}
+                año={null}
+            />
         </div>
     );
 };
