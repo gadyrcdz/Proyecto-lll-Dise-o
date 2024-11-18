@@ -9,7 +9,7 @@ const PORT = 8080;
 
 // Middleware para habilitar CORS
 app.use(cors({
-  origin: 'http://localhost:3000', // Permitir solicitudes desde tu frontend
+  origin: '*', // Permitir solicitudes desde tu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
   allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
 }));
@@ -17,6 +17,10 @@ app.use(cors({
 // Middleware para manejar JSON
 app.use(express.json());
 
+app.use(cors({
+  origin: 'http://localhost:3000', // Especifica el origen permitido
+
+}));
 
 
 // Rutas

@@ -1,0 +1,111 @@
+/* CarDetails.css */
+
+.car-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  .car-images {
+    margin-top: 20px;
+  }
+  
+  .image-slide img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  
+  .basic-info, .extra-info {
+    margin-top: 30px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.reserve-button {
+    margin-top: 30px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .extra-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .extra-info p {
+    margin-bottom: 12px;
+  }
+  
+  h3, h4 {
+    margin-top: 0;
+  }
+  
+  h4 {
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  
+  /* Styling for the slider */
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slick-dots {
+    bottom: -30px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 14px;
+    color: #007bff;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #0056b3;
+  }
+  
