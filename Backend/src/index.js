@@ -3,7 +3,6 @@ const cors = require('cors'); // Importar cors
 const { connectToDB } = require('./config/db');
 const vehiculosRoutes = require('./routes/vehiclesRoutes');
 const userRoutes = require('./routes/userRoutes');
-const cors = require('cors'); // Importa el paquete cors
 
 const app = express();
 const PORT = 8080;
@@ -18,10 +17,6 @@ app.use(cors({
 // Middleware para manejar JSON
 app.use(express.json());
 
-app.use(cors({
-  origin: 'http://localhost:3000', // Especifica el origen permitido
-
-}));
 
 
 // Rutas
