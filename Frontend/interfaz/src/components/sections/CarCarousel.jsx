@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
+import { useNavigate } from 'react-router-dom';  // Importa useNavigate
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../assets/CarCarousel.css';
@@ -16,6 +17,7 @@ const CarCarousel = ({
 }) => {
   const [vehicles, setVehicles] = useState([]);
   const [filteredVehicles, setFilteredVehicles] = useState([]);
+  const navigate = useNavigate();  // Inicializa navigate
 
   useEffect(() => {
     const fetchVehicles = async () => {
@@ -71,6 +73,11 @@ const CarCarousel = ({
     slidesToScroll: 1,
   };
 
+  const handleInterestClick = (vehicle) => {
+    // Redirige a CarDetails pasando el vehículo como parámetro
+    navigate('/car-details', { state: { vehicle } });
+  };
+
   return (
     <div className="carousel-container">
       <Slider {...settings}>
@@ -100,6 +107,10 @@ const CarCarousel = ({
                 <p><strong>Precio:</strong> {vehicle.precio} ₡</p>
                 <p><strong>Motor:</strong> {vehicle.motor}</p>
                 <p><strong>Transmisión:</strong> {vehicle.transmision}</p>
+                {/* Botón "Me interesa" */}
+                <button onClick={() => handleInterestClick(vehicle)}>
+                  Me interesa
+                </button>
               </div>
             </div>
           );

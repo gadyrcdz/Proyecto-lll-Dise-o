@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import Swal from 'sweetalert2';
 import BasicInformation from "./BasicInformation";
 import SaleOptions from "./SaleOptions";
 import PhysicalFeatures from "./PhysicalFeatures";
@@ -10,6 +12,8 @@ import "../../assets/vehicleRegister.css";
 import Cloudinary from "./Cloudinary";
 
 const VehicleRegister = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     tipoVehiculo: "",
     marca: "",
@@ -90,19 +94,36 @@ const VehicleRegister = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     const formattedData = mapFormData();
     console.log("Datos formateados:", formattedData);
-
+  
     try {
       const response = await axios.post("http://localhost:8080/api/vehiculos", formattedData);
       console.log("Respuesta del servidor:", response.data);
-      alert("Vehículo registrado correctamente.");
+  
+      // Mostrar una alerta de éxito con SweetAlert2
+      Swal.fire({
+        title: '¡Éxito!',
+        text: 'Vehículo registrado correctamente.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      }).then(() => {
+        // Redirigir al inicio
+        navigate('/');
+      });
     } catch (error) {
       console.error("Error al registrar el vehículo:", error);
-      alert("Ocurrió un error al registrar el vehículo.");
+  
+      // Mostrar una alerta de error con SweetAlert2
+      Swal.fire({
+        title: 'Error',
+        text: 'Ocurrió un error al registrar el vehículo.',
+        icon: 'error',
+        confirmButtonText: 'Intentar de nuevo'
+      });
     }
-  };
+  };  
 
   return (
     <div className="vehicle-register-container">
