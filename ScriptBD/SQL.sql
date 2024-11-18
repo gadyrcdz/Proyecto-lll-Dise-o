@@ -122,3 +122,38 @@ EXEC intoUs 'DNI', '12345678sadas91', 'Juan', 'Pérez', 'Gómez', 'Costa Rica', 
 
 
 select * from Usuarios;
+
+
+CREATE TABLE [dbo].[Vehiculos](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[tipo_vehiculo] [varchar](50) NULL,
+	[marca] [varchar](100) NULL,
+	[modelo] [varchar](100) NULL,
+	[año] [int] NULL,
+	[placa] [varchar](20) NULL,
+	[precio] [decimal](10, 2) NULL,
+	[precio_negociable] [bit] NULL,
+	[recibe_otros_vehiculos] [bit] NULL,
+	[asociado_leasing] [bit] NULL,
+	[fotos_internas] [varchar](500) NULL,
+	[fotos_externas] [varchar](500) NULL,
+	[cantidad_puertas] [int] NULL,
+	[largo] [decimal](5, 2) NULL,
+	[ancho] [decimal](5, 2) NULL,
+	[alto] [decimal](5, 2) NULL,
+	[material_asientos] [varchar](50) NULL,
+	[motor] [varchar](50) NULL,
+	[transmision] [varchar](50) NULL,
+	[es_4x4] [bit] NULL,
+	[vidrios_electricos] [bit] NULL,
+	[espejos_electricos] [bit] NULL,
+	[sensores_traseros] [bit] NULL,
+	[sensores_delanteros] [bit] NULL,
+	[sensores_laterales] [bit] NULL,
+	[camara_retroceso] [bit] NULL,
+	[camara_360] [bit] NULL,
+	[tablero_mando] [varchar](50) NULL,
+	[sistema_sonido] [varchar](50) NULL,
+	[estado_general] [int] NULL,
+	[tapizado] [varchar](50) NULL,
+)
