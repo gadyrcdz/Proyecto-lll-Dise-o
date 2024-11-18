@@ -17,10 +17,7 @@ app.use(cors({
 // Middleware para manejar JSON
 app.use(express.json());
 
-app.use(cors({
-  origin: 'http://localhost:3000', // Especifica el origen permitido
 
-}));
 
 
 // Rutas

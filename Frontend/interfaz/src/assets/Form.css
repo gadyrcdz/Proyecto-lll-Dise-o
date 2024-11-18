@@ -1,0 +1,107 @@
+/* Contenedor general del formulario */
+.filter-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el encabezado */
+h1 {
+    text-align: center; /* Centra el texto */
+    font-family: 'Arial', sans-serif; /* Cambia la fuente a Arial */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Hace la fuente negrita */
+    color: #333; /* Color del texto */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+
+/* Agrupación de cada filtro */
+.filter-group {
+    margin-bottom: 2px; /* Aumentamos el margen inferior entre los inputs */
+}
+
+/* Etiquetas de cada filtro */
+.filter-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilo de los inputs de los filtros */
+.filter-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-top: 8px;  /* Separación superior */
+    margin-right: 7px; /* Separación inferior */
+    margin-bottom: 8px; /* Separación inferior */
+}
+
+/* Enfoque de los inputs */
+.filter-group input:focus {
+    border-color: #007bff;
+}
+
+/* Contenedor para disposición de filtros */
+.filter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;  /* Aumentamos el espacio entre las columnas */
+}
+
+/* Estilo para el botón de borrar filtros */
+.filter-reset {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a0303be;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.filter-reset:hover {
+  background-color: #6a0303be;
+}
+
+/* Alineación centrada para el input del año */
+.filter-group.year input {
+    text-align: center; /* Centra el texto dentro del input */
+    width: 100%; /* Asegura que el ancho sea completo */
+}
+
+/* Estilo para el botón */
+.filter-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #e53935;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-submit:hover {
+    background-color: #c62828;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .filter-container {
+        grid-template-columns: 1fr;
+    }
+}
