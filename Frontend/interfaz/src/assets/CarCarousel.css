@@ -1,0 +1,83 @@
+.carousel-container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 100%;
+}
+
+.vehicle-card img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.vehicle-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.vehicle-info h3 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.vehicle-info p {
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+.vehicle-info p strong {
+  color: #000;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #999;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #333;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .vehicle-card img {
+    max-width: 300px;
+  }
+
+  .vehicle-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .vehicle-info p {
+    font-size: 0.9rem;
+  }
+}

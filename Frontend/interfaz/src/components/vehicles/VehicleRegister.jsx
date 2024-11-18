@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 import BasicInformation from "./BasicInformation";
 import SaleOptions from "./SaleOptions";
-import PhotoUpload from "./PhotoUpload";
 import PhysicalFeatures from "./PhysicalFeatures";
 import MechanicalAndEngine from "./MechanicalAndEngine";
 import AdditionalFeatures from "./AdditionalFeatures";
 import VehicleCondition from "./VehicleCondition";
 import "../../assets/vehicleRegister.css";
+import Cloudinary from "./Cloudinary";
 
 const VehicleRegister = () => {
   const [formData, setFormData] = useState({
@@ -49,9 +50,58 @@ const VehicleRegister = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const mapFormData = () => {
+    return {
+      tipo_vehiculo: formData.tipoVehiculo,
+      marca: formData.marca,
+      modelo: formData.modelo,
+      año: parseInt(formData.ano, 10) || null,
+      placa: formData.placa,
+      precio: parseFloat(formData.precio) || null,
+      precio_negociable: formData.negociable.toLowerCase() === "si",
+      recibe_otros_vehiculos: formData.recibeVehiculo.toLowerCase() === "si",
+      asociado_leasing: formData.asociadoLeasing.toLowerCase() === "si",
+      fotos_internas: formData.internalPhotos,
+      fotos_externas: formData.externalPhotos,
+      cantidad_puertas: parseInt(formData.doors, 10) || null,
+      largo: parseFloat(formData.largo) || null,
+      ancho: parseFloat(formData.ancho) || null,
+      alto: parseFloat(formData.alto) || null,
+      material_asientos: formData.seatMaterial,
+      motor: formData.motor,
+      transmision: formData.transmission,
+      es_4x4: formData.is4x4.toLowerCase() === "si",
+      vidrios_electricos: formData.electricWindows.toLowerCase() === "si",
+      espejos_electricos: formData.electricMirrors.toLowerCase() === "si",
+      sensores_traseros: formData.rearSensors.toLowerCase() === "si",
+      sensores_delanteros: formData.frontSensors.toLowerCase() === "si",
+      sensores_laterales: formData.sideSensors.toLowerCase() === "si",
+      camara_retroceso: formData.reverseCamera.toLowerCase() === "si",
+      camara_360: formData.camera360.toLowerCase() === "si",
+      tablero_mando: formData.dashboardType,
+      sistema_sonido: formData.soundSystem,
+    estado_general: (() => {
+      const estado = parseInt(formData.estadoGeneral, 10);
+      return estado >= 1 && estado <= 5 ? estado : null;
+    })(),
+      tapizado: formData.tapizado,
+    };
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Formulario enviado", formData);
+
+    const formattedData = mapFormData();
+    console.log("Datos formateados:", formattedData);
+
+    try {
+      const response = await axios.post("http://localhost:8080/api/vehiculos", formattedData);
+      console.log("Respuesta del servidor:", response.data);
+      alert("Vehículo registrado correctamente.");
+    } catch (error) {
+      console.error("Error al registrar el vehículo:", error);
+      alert("Ocurrió un error al registrar el vehículo.");
+    }
   };
 
   return (
@@ -60,7 +110,7 @@ const VehicleRegister = () => {
       <form className="vehicle-register-form" onSubmit={handleSubmit}>
         <BasicInformation onFormChange={handleFormChange} />
         <SaleOptions onFormChange={handleFormChange} />
-        <PhotoUpload onFormChange={handleFormChange} />
+        <Cloudinary onFormChange={handleFormChange} />
         <PhysicalFeatures onFormChange={handleFormChange} />
         <MechanicalAndEngine onFormChange={handleFormChange} />
         <AdditionalFeatures onFormChange={handleFormChange} />

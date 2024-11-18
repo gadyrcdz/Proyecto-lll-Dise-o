@@ -26,6 +26,7 @@ const VehicleCondition = ({ onFormChange }) => {
           onChange={(e) => handleConditionChange(e.target.value)}
           required
         >
+          <option value="">Seleccione</option>
           <option value="1">1 - Excelente</option>
           <option value="2">2 - Bueno</option>
           <option value="3">3 - Regular</option>
@@ -42,6 +43,7 @@ const VehicleCondition = ({ onFormChange }) => {
           onChange={(e) => handleUpholsteryChange(e.target.value)}
           required
         >
+          <option value="">Seleccione</option>
           <option value="cuero">Cuero</option>
           <option value="plastico">Plástico</option>
           <option value="tela">Tela</option>
